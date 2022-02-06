@@ -1,88 +1,78 @@
 package com.ite.cajero.model.beans;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import javax.persistence.*;
 import java.util.Date;
 
+
+/**
+ * The persistent class for the movimientos database table.
+ * 
+ */
+@Entity
+@Table(name="movimientos")
+@NamedQuery(name="Movimiento.findAll", query="SELECT m FROM Movimiento m")
 public class Movimiento implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_movimiento")
 	private int idMovimiento;
-	private Cuenta cuenta;
+
+	private double cantidad;
+
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fecha;
-	private BigDecimal cantidad;
+
 	private String operacion;
-	
+
+	//uni-directional many-to-one association to Cuenta
+	@ManyToOne
+	@JoinColumn(name="id_cuenta")
+	private Cuenta cuenta;
+
 	public Movimiento() {
-		super();
 	}
 
 	public int getIdMovimiento() {
-		return idMovimiento;
+		return this.idMovimiento;
 	}
 
 	public void setIdMovimiento(int idMovimiento) {
 		this.idMovimiento = idMovimiento;
 	}
 
-	public Cuenta getCuenta() {
-		return cuenta;
+	public double getCantidad() {
+		return this.cantidad;
 	}
 
-	public void setCuenta(Cuenta cuenta) {
-		this.cuenta = cuenta;
+	public void setCantidad(double cantidad) {
+		this.cantidad = cantidad;
 	}
 
 	public Date getFecha() {
-		return fecha;
+		return this.fecha;
 	}
 
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
-	public BigDecimal getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(BigDecimal cantidad) {
-		this.cantidad = cantidad;
-	}
-
 	public String getOperacion() {
-		return operacion;
+		return this.operacion;
 	}
 
 	public void setOperacion(String operacion) {
 		this.operacion = operacion;
 	}
 
-	@Override
-	public String toString() {
-		return "Movimiento [idMovimiento=" + idMovimiento + ", cuenta=" + cuenta + ", fecha=" + fecha + ", cantidad="
-				+ cantidad + ", operacion=" + operacion + "]";
+	public Cuenta getCuenta() {
+		return this.cuenta;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idMovimiento;
-		return result;
+	public void setCuenta(Cuenta cuenta) {
+		this.cuenta = cuenta;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Movimiento))
-			return false;
-		Movimiento other = (Movimiento) obj;
-		if (idMovimiento != other.idMovimiento)
-			return false;
-		return true;
-	}
-	
-	
 }

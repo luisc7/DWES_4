@@ -1,64 +1,53 @@
 package com.ite.cajero.model.beans;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import javax.persistence.*;
 
+
+/**
+ * The persistent class for the cuentas database table.
+ * 
+ */
+@Entity
+@Table(name="cuentas")
+@NamedQuery(name="Cuenta.findAll", query="SELECT c FROM Cuenta c")
 public class Cuenta implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@Column(name="id_cuenta")
 	private int idCuenta;
-	private BigDecimal saldo;
+
+	private double saldo;
+
+	@Column(name="tipo_cuenta")
 	private String tipoCuenta;
-			
+
 	public Cuenta() {
-		super();
 	}
-	
+
 	public int getIdCuenta() {
-		return idCuenta;
+		return this.idCuenta;
 	}
+
 	public void setIdCuenta(int idCuenta) {
 		this.idCuenta = idCuenta;
 	}
-	public BigDecimal getSaldo() {
-		return saldo;
+
+	public double getSaldo() {
+		return this.saldo;
 	}
-	public void setSaldo(BigDecimal saldo) {
+
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+
 	public String getTipoCuenta() {
-		return tipoCuenta;
+		return this.tipoCuenta;
 	}
+
 	public void setTipoCuenta(String tipoCuenta) {
 		this.tipoCuenta = tipoCuenta;
 	}
 
-	@Override
-	public String toString() {
-		return "Cuenta [idCuenta=" + idCuenta + ", saldo=" + saldo + ", tipoCuenta=" + tipoCuenta + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idCuenta;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Cuenta))
-			return false;
-		Cuenta other = (Cuenta) obj;
-		if (idCuenta != other.idCuenta)
-			return false;
-		return true;
-	}
-	
-	
-	
 }

@@ -8,7 +8,7 @@ La estructura de ambas tablas se muestra en la siguiente imagen:
 
 ![Modelo de datos del ejercicio](src/main/webapp/WEB-INF/img/BBDD_cajero.jpg)
 
-Enlace a script: ![script_cajero_2022.sql](/UF4_Cajero_LCB/script_cajero_2022.sql)
+Enlace a script: ![script_cajero_2022.sql](script_cajero_2022.sql)
 
 Antes de empezar insertar varias cuentas en la tabla.
 
