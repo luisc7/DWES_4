@@ -33,6 +33,14 @@ public class Movimiento implements Serializable {
 	private Cuenta cuenta;
 
 	public Movimiento() {
+	}	
+
+	public Movimiento(double cantidad, Date fecha, String operacion, Cuenta cuenta) {
+		super();
+		this.cantidad = cantidad;
+		this.fecha = fecha;
+		this.operacion = operacion;
+		this.cuenta = cuenta;
 	}
 
 	public int getIdMovimiento() {

@@ -23,7 +23,7 @@
 	</fieldset>
 	
 	</form>
-	<p>${mensajeLogin}</p>
+	<h1>${mensajeLogin}</h1>
 	<p>Cuenta 1: <b>1000</b></p>
 	<p>Cuenta 2: <b>2000</b></p>
 </body>

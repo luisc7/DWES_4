@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ite.cajero</groupId>
-	<artifactId>UF4_Cajero_LCB</artifactId>
+	<artifactId>UF4_Cajero_LCB-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UF4_Cajero_LCB</name>
+	<name>UF4_Cajero_LCB-1</name>
 	<description>Realizar movimientos en cuentas</description>
 	<properties>
 		<java.version>11</java.version>
@@ -44,14 +44,14 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version><!-- $NO-MVN-MAN-VER$ -->
-		</dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version><!--$NO-MVN-MAN-VER$-->
+	 	</dependency>
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
 		</dependency>
 		
 	</dependencies>

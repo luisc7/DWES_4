@@ -10,16 +10,17 @@
 </head>
 <body>
 
-	<p>${mensajeOperar}</p>
+	<h1>Cuenta ${cuentaActiva.idCuenta}</h1>
+	<h3><a href=logout>Salir</a></h3>
 	<nav>
 		<ul>
 			<li><a href=ingresar>Ingresar</a></li>
 			<li><a href=extraer>Extraer</a></li>
 			<li><a href=movimientos>Ver movimientos</a></li>
 			<li><a href=transferencia>Transferencia</a></li>
-			<li><a href=salir>Salir</a></li>
 		</ul>
 	</nav>
+	<p>${mensajeOperar}</p>
 
 </body>
 </html>
