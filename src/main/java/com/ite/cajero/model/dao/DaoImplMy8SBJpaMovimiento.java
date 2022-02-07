@@ -1,6 +1,5 @@
 package com.ite.cajero.model.dao;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,16 +46,7 @@ public class DaoImplMy8SBJpaMovimiento implements IntDaoMovimiento {
 	@Override
 	public List<Movimiento> movimientosCuenta(Cuenta cuenta) {
 		
-		List<Movimiento> misMovimientos = new ArrayList<Movimiento>();
-		
-		List<Movimiento> todosMovimientos = mrepo.findAll();
-		for (Movimiento mov : todosMovimientos) {
-			if (mov.getCuenta().equals(cuenta)) {
-				misMovimientos.add(mov);
-			}
-		}	
-		
-		return misMovimientos;
+		return mrepo.findByCuenta(cuenta.getIdCuenta());
 	}
 
 }
